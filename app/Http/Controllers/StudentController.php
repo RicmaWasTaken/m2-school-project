@@ -14,31 +14,37 @@ class StudentController extends Controller
         $students = Student::with('class')->get();
         $mytime = Carbon::today();
         foreach ($students as $student) {
+            // Convert last name to uppercase bc France lol
+            $student->last_name = strtoupper($student->last_name);
+            // Calculate student's current age (if statement is useless bc birthdate is required but security)
             if (!empty($student->birthdate)) {
                 $birthdate = Carbon::createFromFormat('Y-m-d', $student->birthdate);
                 $ageInt = (int)$birthdate->diffInYears($mytime);
                 $student->studentAge = "$ageInt years old";
             } else {
-                $student->studentAge = 'Unknown';
+                $student->studentAge = 'Immortal';
             }
         }
         return view('students.index', compact('students', 'mytime'));
     }
 
     // Show students of a chosen classroom
-    public function showByClassroom($classroomId){
+    /*public function showByClassroom($classroomId){
         $classroom = Classroom::findOrFail($classroomId);
         $students = $classroom->students;
+        foreach ($students as $student) {
+            $student->last_name = strtoupper($student->last_name);
+        }
         return view('students.by_classroom', compact('classroom', 'students'));
-    }
+    }*/
 
-    // Show form to add a student
+    //Fetches all available class names and returns them to the view for the dropdown
     public function create(){
         $classes = Classroom::all();
         return view('students.create', compact('classes'));
     }
 
-    // Store a new student
+    // Yeet a new student into the db
     public function store(Request $request){
         $validatedData = $request->validate([
             'first_name' => 'required|string|max:255',

@@ -25,6 +25,10 @@ class ClassroomController extends Controller
     {
         // Find the classroom by its name
         $classroom = Classroom::where('name', $name)->firstOrFail();
+        $students = $classroom->students;
+        foreach ($students as $student) {
+            $student->last_name = strtoupper($student->last_name);
+        }
 
         // Return a view with the classroom data
         return view('classrooms.show', compact('classroom'));
