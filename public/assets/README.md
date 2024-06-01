@@ -1,0 +1,2 @@
+Hi Mark ! Sorry for not using the native app.css file but I looke it up and there was a lot of npm stuff and whatnot. I WILL understand it one day but, for now, it's too much for my smol brain. 
+That's why I stuffed all of my client-side resources in the public/assets folder. Okay take care bye

@@ -1,0 +1,16 @@
+:root{
+    --table-border: 1px solid black;
+}
+body{
+    background-color: aqua;
+}
+table, td, th{
+    border: var(--table-border);
+}
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td{
+    padding: 20px;
+}
