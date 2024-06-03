@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title>Class : {{ $classroom->name }}</title>
 </head>
 <body>
+    <a href="/" class="nav-button left">Home</a>
+    <a href="/classes"  class="nav-button right">All classes</a>
     <h1>{{ $classroom->name }}</h1>
     @if($classroom->students->isEmpty())
-        <h2>Erorr 69 : No datas have been finded im de batadase</h2>
+        <h2>{{ $randomQuote }}</h2>
     @else
         <table>
             <tr>
