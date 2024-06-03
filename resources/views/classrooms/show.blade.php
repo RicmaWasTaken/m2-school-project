@@ -19,12 +19,14 @@
                 <th>N°</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>Age</th>
             </tr>
             @foreach($classroom->students as $student)
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $student->first_name }}</td>
                 <td>{{ $student->last_name }}</td>
+                <td>{{ $student->studentAge }}<br>({{ $student->birthdate }})</td>
             </tr>
             @endforeach
         </table>
