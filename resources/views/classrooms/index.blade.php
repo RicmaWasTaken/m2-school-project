@@ -7,6 +7,8 @@
     <title>Class Index</title>
 </head>
 <body>
+    <a href="/" class="nav-button left">Home</a>
+    <a href="/students"  class="nav-button right">All students</a>
     <h1>This has all the classes</h1>
     <table>
         <tr>

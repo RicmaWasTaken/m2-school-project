@@ -8,8 +8,8 @@
     <title>Students : All</title>
 </head>
 <body>
-    <a href="/" class="home-button">Home</a>
-    <a href="/students/create"  class="home-button">Create</a>
+    <a href="/" class="nav-button left">Home</a>
+    <a href="/students/create"  class="nav-button right">Create</a>
     <h1>this is the student index !</h1>
     <table>
         <tr>
@@ -25,7 +25,7 @@
                 <td>{{ $student->first_name }}</td>
                 <td>{{ $student->last_name }}</td>
                 <td>{{ $student->class->name }}</td>
-                <td>{{ $student->studentAge }}</td>
+                <td>{{ $student->studentAge }}<br>({{ $student->birthdate }})</td>
             </tr>
         @endforeach
     </table>

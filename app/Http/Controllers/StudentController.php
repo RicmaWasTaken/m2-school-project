@@ -28,16 +28,6 @@ class StudentController extends Controller
         return view('students.index', compact('students', 'mytime'));
     }
 
-    // Show students of a chosen classroom
-    /*public function showByClassroom($classroomId){
-        $classroom = Classroom::findOrFail($classroomId);
-        $students = $classroom->students;
-        foreach ($students as $student) {
-            $student->last_name = strtoupper($student->last_name);
-        }
-        return view('students.by_classroom', compact('classroom', 'students'));
-    }*/
-
     //Fetches all available class names and returns them to the view for the dropdown
     public function create(){
         $classes = Classroom::all();

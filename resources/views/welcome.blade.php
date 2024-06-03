@@ -4,20 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/assets/style.css">
-        <title>School Project</title>
+        <title>School - M2</title>
     </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <h1>What do you want to do ?</h1>
-        <div>
-            <div>
-                <a href="/students/create">Add a student</a>
-            </div>
-            <div>
-                <a href="/students">Show all students</a>
-            </div>
-            <div>
-                <a href="/classes">Show students by class</a>
-            </div>
+    <body>
+        <h1>Web & Dev Elementary School</h1>
+        <h2>Where kids become geniuses</h2>
+        <div class="index-choices">
+            <a href="/students/create">Add a student</a>
+            <a href="/students">Show all students</a>
+            <a href="/classes">Show students by class</a>
         </div>
     </body>
 </html>

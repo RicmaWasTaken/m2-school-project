@@ -7,7 +7,9 @@
     <title>New Student</title>
 </head>
 <body>
-    <h1>this is the create students page</h1>
+    <a href="/" class="nav-button left">Home</a>
+    <a href="/students"  class="nav-button right">View all</a>
+    <h1>Add a new student</h1>
     <form action="{{ route('students.store') }}" method="POST">
         @csrf
         <input type="text" placeholder="First Name" name="first_name">
