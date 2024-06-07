@@ -9,7 +9,7 @@ use Illuminate\Support\Carbon;
 
 class StudentController extends Controller
 {
-    // Display all students
+    // Show all studetns
     public function index(){
         $students = Student::with('class')->get();
         $mytime = Carbon::today();
@@ -28,7 +28,7 @@ class StudentController extends Controller
         return view('students.index', compact('students', 'mytime'));
     }
 
-    //Fetches all available class names and returns them to the view for the dropdown
+    //Returns all existign classes for dynamic select
     public function create(){
         $classes = Classroom::all();
         return view('students.create', compact('classes'));
@@ -43,8 +43,6 @@ class StudentController extends Controller
             'address' => 'required|string|max:255',
             'class_id' => 'required|exists:classes,id' // Ensure the class_id exists in the classes table
         ]);
-
-        // Create a new student record with the validated data
         Student::create($validatedData);
     }
 }

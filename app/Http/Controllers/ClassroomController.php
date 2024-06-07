@@ -24,7 +24,7 @@ class ClassroomController extends Controller
         $classroom = Classroom::where('name', $name)->firstOrFail();
         $students = $classroom->students;
         foreach ($students as $student) {
-            //Capitalize last names
+            //Capitalize last names bc france i guess
             $student->last_name = strtoupper($student->last_name);
             //Calculate student's age
             $mytime = Carbon::today();
@@ -36,8 +36,6 @@ class ClassroomController extends Controller
                 $student->studentAge = 'Immortal';
             }
         }
-
-        // Return a view with the classroom data
         return view('classrooms.show', compact('classroom', 'randomQuote'));
     }
 }
